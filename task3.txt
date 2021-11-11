@@ -1,0 +1,27 @@
+class Solution {
+    public int divide(int dividend, int divisor) {
+        int sign = 1;
+        if (dividend < 0 || divisor < 0){
+            sign = -1;
+        }
+        if(dividend < 0 && divisor < 0){
+        sign = 1;
+        }
+        
+        long dividend1 = Math.abs(dividend);
+        long divisor1 = Math.abs(divisor);
+        int quotient = 0;
+    
+        
+         
+        while (dividend1 >= divisor1)
+        {
+            dividend1 -= divisor1;
+            ++quotient;
+        }
+
+        if(sign==-1) quotient=-quotient;
+       
+        return quotient;
+    }
+}
